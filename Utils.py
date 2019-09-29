@@ -1,11 +1,11 @@
 import cv2 as cv2
-# read image
+# Reads the image and converts it to RGB space.
 def readImage(imagePath):
     img = cv2.imread(imagePath)
     img2rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     return img2rgb
 
-
+# Given the dimensions of a box, plots the boxes in the given image
 def drawBoxesInImage(img, n, bboxes, color='b'):
     img_with_bboxes = img.copy()
     thickness = 2
@@ -24,6 +24,7 @@ def drawBoxesInImagePredBox(img, n, bboxes, color='b'):
         img_with_bboxes = cv2.rectangle(img_with_bboxes, (x1, y1), (x2+x1, y2+y1), color, thickness)
     return img_with_bboxes
 
+# Parses the provided annotations for an image and provides the bounding boxes dimensions
 def parseXMLAndFindObjects(xmlPath):
     import xml.etree.ElementTree as ET
     tree = ET.parse(xmlPath)
@@ -48,11 +49,11 @@ def parseXMLAndFindObjects(xmlPath):
 
     return objects
 
-''' Get area of a bounding box in xyxy format. '''
+#Given the dimension of a box, calculates its area.
 def calculateArea(bbox):
     return (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
 
-''' Get overlap area of two bounding boxes, returns 0 if no overlap. '''
+# Given two bounding boxes, calculates the intersection area.
 def calculateOverlapArea(bbox1, bbox2):
     x1 = max(bbox1[0], bbox2[0])
     x2 = min(bbox1[2], bbox2[2])
@@ -62,15 +63,7 @@ def calculateOverlapArea(bbox1, bbox2):
         return 0 # no overlap
     return (x2 - x1) * (y2 - y1)
 
-''' Evaluate predicted bounding boxes using IOU.
-Args:
-    pred_bboxes: bounding boxes to be evaluated.
-    gt_bboxes: ground truth bounding boxes.
-Returns:
-    precision: precision of the predicted bboxes.
-    recall: recall value of the predicted bboxes.
-    correct_bboxes: a list of correct bboxes (with iou > 0.5).
-'''
+#Calculates the Intersection Over Union (IOU) for source and target bounding boxes and returns boxes with IOU greater than a given threshold
 def calculateIOU(pred_bboxes, gt_bboxes, threshold=0.5):
     tp = 0
     correct_bboxes = []
@@ -88,10 +81,10 @@ def calculateIOU(pred_bboxes, gt_bboxes, threshold=0.5):
             intersect_area = calculateOverlapArea(list(corr_pred_bbox), list(gt_bbox))
             union_area = area_pred_bbox + area_gt_bbox - intersect_area
             iou = float(intersect_area) / union_area
-            if(maxOverlap<iou):
-                maxOverlapBox=pred_bbox
-                maxOverlap=iou
             if iou > threshold:
+                if (maxOverlap < iou):
+                    maxOverlapBox = pred_bbox
+                    maxOverlap = iou
                 ctp= 1
                 correct_bboxes.append(pred_bbox)
         tp+=ctp
@@ -102,16 +95,6 @@ def calculateIOU(pred_bboxes, gt_bboxes, threshold=0.5):
     recall = tp / len(gt_bboxes)
     return mabo, precision*100, recall*100, correct_bboxes, maxOverlap_bboxes
 
-def loadYMLModel(modelPath):
-    import yaml
-
-    model = None
-    with open(modelPath, 'r') as stream:
-        try:
-            model = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
-    return model
 
 
 
