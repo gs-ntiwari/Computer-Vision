@@ -3,7 +3,12 @@
 def applySelectiveSearch(img, isCombined=False):
     import cv2 as cv2
     ss = cv2.ximgproc.segmentation.createSelectiveSearchSegmentation()
+    ss.clearImages()
     ss.clearStrategies()
+    ss.clearGraphSegmentations()
+    ss.addImage(img)
+    gs=cv2.ximgproc.segmentation.createGraphSegmentation()
+    ss.addGraphSegmentation(gs)
     color_strategy = cv2.ximgproc.segmentation.createSelectiveSearchSegmentationStrategyColor()
     texture_strategy = cv2.ximgproc.segmentation.createSelectiveSearchSegmentationStrategyTexture()
     fill_strategy = cv2.ximgproc.segmentation.createSelectiveSearchSegmentationStrategyFill()
@@ -13,11 +18,24 @@ def applySelectiveSearch(img, isCombined=False):
                                                                                                     texture_strategy,
                                                                                                     fill_strategy,
                                                                                                     size_strategy)
+        sigma = 0.8
+        base_k = 150
+        inc_k = 150
+        k = 0
+        while (k <= (base_k + inc_k * 2)):
+            gs = cv2.ximgproc.segmentation.createGraphSegmentation(sigma, k)
+            ss.addGraphSegmentation(gs)
+            k += inc_k
     else:
         strategy=color_strategy
+        sigma = 0.8
+        base_k = 150
+        inc_k = 150
+        k = 0
+        while (k <= (base_k + inc_k * 2)):
+            gs = cv2.ximgproc.segmentation.createGraphSegmentation(sigma, k)
+            ss.addGraphSegmentation(gs)
+            k += inc_k
     ss.addStrategy(strategy)
-
-    ss.setBaseImage(img)
-    ss.switchToSelectiveSearchFast()
     bboxes = ss.process()
     return bboxes
