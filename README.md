@@ -1,3 +1,3 @@
 # Computer-Vision
 
-Please refer to the wiki of this repository to read the details of each project.
+For descriptiom of each project, please refer to the pdf report specific to each project in its folder.
