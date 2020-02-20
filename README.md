@@ -12,4 +12,8 @@ https://github.com/gs-ntiwari/Computer-Vision/blob/master/SIFT%20Matching%20and%
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Object%20Detection/CSCI677_%20HW2%20Report.pdf
 
 ## An Analysis of adversarial attacks on Deep Neural networks using FGSM and I-FGSM (targeted and non-targeted)
+https://github.com/gs-ntiwari/Computer-Vision/blob/master/Advesarial%20Attacks%20using%20I-FGSM%20and%20FGSM/CSCI677_HW6_Nisha_Tiwari.pdf
+
+## Image segmentation using FCN-32 and FCN-16
+
 
