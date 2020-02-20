@@ -10,3 +10,6 @@ https://github.com/gs-ntiwari/Computer-Vision/blob/master/Segmentation/CSCI677_%
 
 ## A Comparison analysis of Image segmentation using FCN-32 and FCN-16
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Segmentation/CSCI677_%20HW2%20Report.pdf
+
+## An Analysis of adversarial attacks on Deep Neural networks using FGSM and I-FGSM (targeted and non-targeted)
+
