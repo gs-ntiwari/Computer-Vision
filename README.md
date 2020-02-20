@@ -15,5 +15,6 @@ https://github.com/gs-ntiwari/Computer-Vision/blob/master/Object%20Detection/CSC
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Advesarial%20Attacks%20using%20I-FGSM%20and%20FGSM/CSCI677_HW6_Nisha_Tiwari.pdf
 
 ## Image segmentation using FCN-32 and FCN-16
+https://github.com/gs-ntiwari/Computer-Vision/blob/master/Image%20Segmentation%20using%20FCN-32%20and%20FCN-16/HW5Report.pdf
 
 
