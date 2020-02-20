@@ -6,7 +6,7 @@ For descriptiom of each project, please refer to the following links to the pdf 
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Classification%20Using%20LeNet5/Report_LeNet5_Nisha_Tiwari.pdf
 
 ## SIFT matching and 3D reconstruction of an image
-https://github.com/gs-ntiwari/Computer-Vision/blob/master/Segmentation/CSCI677_%20HW2%20Report.pdf
+https://github.com/gs-ntiwari/Computer-Vision/blob/master/SIFT%20Matching%20and%20SFM/CSCI677-HW3-Nisha-Tiwari-.pdf
 
 ## Analysis on various setting for Edgebox and Selective Search Object Detection methods.
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Object%20Detection/CSCI677_%20HW2%20Report.pdf
