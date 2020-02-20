@@ -9,7 +9,7 @@ https://github.com/gs-ntiwari/Computer-Vision/blob/master/Classification%20Using
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Segmentation/CSCI677_%20HW2%20Report.pdf
 
 ## Analysis on various setting for Edgebox and Selective Search Object Detection methods.
-https://github.com/gs-ntiwari/Computer-Vision/blob/master/Segmentation/CSCI677_%20HW2%20Report.pdf
+https://github.com/gs-ntiwari/Computer-Vision/blob/master/Object%20Detection/CSCI677_%20HW2%20Report.pdf
 
 ## An Analysis of adversarial attacks on Deep Neural networks using FGSM and I-FGSM (targeted and non-targeted)
 
