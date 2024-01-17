@@ -1,6 +1,6 @@
 # Computer-Vision
 
-For descriptiom of each project, please refer to the following links to the pdf report specific to each project.
+Please refer to the following links to the pdf report for each project.
 
 ## Classification using LeNet-5 on CINIC-10
 https://github.com/gs-ntiwari/Computer-Vision/blob/master/Classification%20Using%20LeNet5/Report_LeNet5_Nisha_Tiwari.pdf
